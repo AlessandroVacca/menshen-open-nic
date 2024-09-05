@@ -21,6 +21,13 @@ The build process consists on running a script that will clone the OpenNIC and M
    ```sh
    git clone https://github.com/AlessandroVacca/menshen-open-nic.git && cd menshen-open-nic
    ```
+2. We used [Xilinx Application 1151 CAM](https://www.xilinx.com/member/forms/download/design-license.html?cid=154257&filename=xapp1151_Param_CAM.zip). 
+   After downloading it and placing it in the "menshen-open-nic/" folder, run the following commands:
+   ```sh
+   unzip xapp1151_Param_CAM.zip
+   cp -r xapp1151_cam_v1_1/src/vhdl ./xilinx_cam
+   patch -p0 --ignore-whitespace -i cam.patch
+   ```
 3. Give to the script the necessary permissions
    ```sh
    chmod +x menshen-open-nic.sh
